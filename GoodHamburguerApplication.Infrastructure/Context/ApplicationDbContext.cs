@@ -1,4 +1,5 @@
-﻿using GoodHamburguerApplication.Infrastructure.Mappings;
+﻿using GoodHamburguerApplication.Domain.Entities;
+using GoodHamburguerApplication.Infrastructure.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace GoodHamburguerApplication.Infrastructure.Context
@@ -8,6 +9,10 @@ namespace GoodHamburguerApplication.Infrastructure.Context
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Sandwich> Sandwiches { get; set; }
+        public DbSet<Extra> Extras { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
