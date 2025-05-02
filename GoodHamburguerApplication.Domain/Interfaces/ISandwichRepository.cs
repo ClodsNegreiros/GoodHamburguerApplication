@@ -2,7 +2,7 @@
 
 namespace GoodHamburguerApplication.Domain.Interfaces
 {
-    public interface ISandiwchRepository
+    public interface ISandwichRepository
     {
         Task<List<Sandwich>> GetSandiwchesAsync();
     }

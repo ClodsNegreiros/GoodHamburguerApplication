@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoodHamburguerApplication.Infrastructure.Repositories
 {
-    public class SandwichRepository : ISandiwchRepository
+    public class SandwichRepository : ISandwichRepository
     {
         private readonly ApplicationDbContext _context;
 
