@@ -1,3 +1,5 @@
+using GoodHamburguerApplication.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1
 {
@@ -22,6 +24,9 @@ namespace WebApplication1
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseInMemoryDatabase("GoodHamburgerDb"));
 
             app.UseHttpsRedirection();
 
