@@ -9,7 +9,6 @@ namespace GoodHamburguerApplication.Application.Responses.Order
         public decimal Discount { get; set; }
         public DateTime CreatedAt { get; set; }
         public int SandwichId { get; set; }
-        public Sandwich? Sandwich { get; set; }
-        public List<Extra> Extras { get; set; }
+        public List<int> ExtraIds { get; set; }
     }
 }

@@ -17,5 +17,12 @@ namespace GoodHamburgerApplication.API.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Get([FromServices] IGetOrdersUseCase useCase)
+        {
+            var result = await useCase.Execute();
+            return Ok(result);
+        }
     }
 }
