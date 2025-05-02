@@ -42,5 +42,10 @@ namespace GoodHamburguerApplication.Infrastructure.Repositories
 
             return order;
         }
+
+        public async Task<Order> GetOrderByIdAsync(int id)
+        {
+            return await _context.Orders.SingleOrDefaultAsync(order => order.Id == id);
+        }
     }
 }

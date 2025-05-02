@@ -8,5 +8,6 @@ namespace GoodHamburguerApplication.Domain.Interfaces
         public Task<List<Order>> GetOrdersAsync();
         public Task<Order> UpdateOrderAsync(Order order);
         public Task<Order> DeleteOrderAsync(Order order);
+        Task<Order> GetOrderByIdAsync(int id);
     }
 }
