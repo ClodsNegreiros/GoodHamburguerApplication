@@ -1,5 +1,4 @@
-﻿using GoodHamburguerApplication.Application.Responses.Order;
-using MediatR;
+﻿using MediatR;
 
 namespace GoodHamburguerApplication.Application.Queries.Order.GetOrders
 {

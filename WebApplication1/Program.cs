@@ -29,6 +29,8 @@ namespace WebApplication1
             builder.Services.AddScoped<IDeleteOrderUseCase, DeleteOrderUseCase>();
             builder.Services.AddScoped<IUpdateOrderUseCase, UpdateOrderUseCase>();
 
+            builder.Services.AddScoped<IGetSandwichesUseCase, GetSandwichesUseCase>();
+
             // Repository DI
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
             builder.Services.AddScoped<ISandwichRepository, SandwichRepository>();
