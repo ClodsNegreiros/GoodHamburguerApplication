@@ -75,11 +75,7 @@ namespace GoodHamburguerApplication.Application.Commands.Order.SendOrder
         {
             return new OrderResponse
             {
-                CreatedAt = DateTime.Now,
-                SandwichId = model.Id,
-                ExtraIds = model.Extras.Select(extra => extra.Id).ToList(),
-                TotalPrice = model.TotalPrice * (1 - model.Discount),
-                Discount = model.Discount
+                TotalPrice = model.TotalPrice
             };
         }
 
