@@ -17,7 +17,7 @@ namespace WebApplication1
             // Add Mediator DI
             builder.Services.AddMediatR(cfg => 
                 cfg.RegisterServicesFromAssemblies(
-                    typeof(Program).Assembly
+                    AppDomain.CurrentDomain.GetAssemblies()
                 ));
 
 
