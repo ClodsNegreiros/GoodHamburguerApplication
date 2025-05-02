@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using MediatR;
 using GoodHamburguerApplication.Domain.Interfaces;
 using GoodHamburguerApplication.Application.Interfaces.Order;
 using GoodHamburguerApplication.Application.UseCases.Order;
@@ -26,6 +25,7 @@ namespace WebApplication1
 
             // UseCase DI
             builder.Services.AddScoped<ISendOrderUseCase, SendOrderUseCase>();
+            builder.Services.AddScoped<IGetOrdersUseCase, GetOrdersUseCase>();
 
             // Repository DI
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
