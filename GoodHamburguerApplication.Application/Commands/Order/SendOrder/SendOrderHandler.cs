@@ -77,8 +77,7 @@ namespace GoodHamburguerApplication.Application.Commands.Order.SendOrder
             {
                 CreatedAt = DateTime.Now,
                 SandwichId = model.Id,
-                Sandwich = model.Sandwich,
-                Extras = model.Extras,
+                ExtraIds = model.Extras.Select(extra => extra.Id).ToList(),
                 TotalPrice = model.TotalPrice * (1 - model.Discount),
                 Discount = model.Discount
             };
