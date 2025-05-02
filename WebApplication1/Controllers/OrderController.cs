@@ -33,5 +33,15 @@ namespace GoodHamburgerApplication.API.Controllers
             var result = await useCase.Execute(id);
             return Ok(result);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(
+            [FromRoute] int id,
+            [FromBody] UpdateOrderRequest request,
+            [FromServices] IUpdateOrderUseCase useCase)
+        {
+            var result = await useCase.Execute(id, request);
+            return Ok(result);
+        }
     }
 }
