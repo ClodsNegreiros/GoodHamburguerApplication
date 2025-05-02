@@ -8,6 +8,6 @@
         public DateTime CreatedAt { get; set; }
         public int SandwichId { get; set; }
         public Sandwich? Sandwich { get; set; }
-        public List<Extra> Extras { get; set; }
+        public List<Extra>? Extras { get; set; }
     }
 }
