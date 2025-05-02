@@ -8,7 +8,7 @@ namespace GoodHamburguerApplication.Application.UseCases.Order
 {
     public class SendOrderUseCase : BaseUseCase, ISendOrderUseCase
     {
-        protected SendOrderUseCase(IMediator mediator) : base(mediator)
+        public SendOrderUseCase(IMediator mediator) : base(mediator)
         {
         }
 
