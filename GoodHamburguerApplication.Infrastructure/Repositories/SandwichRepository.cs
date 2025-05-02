@@ -19,5 +19,11 @@ namespace GoodHamburguerApplication.Infrastructure.Repositories
         {
             return await _context.Sandwiches.ToListAsync();
         }
+
+        public async Task<Sandwich> GetByIdAsync(int id)
+        {
+            return await _context.Sandwiches
+                .SingleOrDefaultAsync(sandwich => sandwich.Id == id);
+        }
     }
 }
