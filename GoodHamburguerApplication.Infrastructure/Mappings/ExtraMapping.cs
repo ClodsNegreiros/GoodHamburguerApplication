@@ -16,8 +16,8 @@ namespace GoodHamburguerApplication.Infrastructure.Mappings
 
             builder
              .HasMany(extra => extra.Orders)
-             .WithOne(order => order.Extra)
-             .HasForeignKey(order => order.SandwichId);
+             .WithMany(order => order.Extras)
+             .UsingEntity(builder => builder.ToTable("OrderExtras"));
         }
     }
 }

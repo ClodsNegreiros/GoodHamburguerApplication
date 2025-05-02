@@ -14,7 +14,6 @@ namespace GoodHamburguerApplication.Infrastructure.Mappings
             builder.Property(order => order.Discount);
             builder.Property(order => order.CreatedAt);
             builder.Property(order => order.SandwichId);
-            builder.Property(order => order.ExtraId);
 
             builder
               .HasOne(order => order.Sandwich)
@@ -22,9 +21,9 @@ namespace GoodHamburguerApplication.Infrastructure.Mappings
               .HasForeignKey(order => order.SandwichId);
 
             builder
-              .HasOne(order => order.Extra)
+              .HasMany(order => order.Extras)
               .WithMany(extra => extra.Orders)
-              .HasForeignKey(order => order.SandwichId);
+              .UsingEntity(builder => builder.ToTable("OrderExtras"));
         }
     }
 }
