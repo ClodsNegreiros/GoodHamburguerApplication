@@ -31,6 +31,8 @@ namespace WebApplication1
 
             builder.Services.AddScoped<IGetSandwichesUseCase, GetSandwichesUseCase>();
 
+            builder.Services.AddScoped<IGetExtrasUseCase, GetExtrasUseCase>();
+
             // Repository DI
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
             builder.Services.AddScoped<ISandwichRepository, SandwichRepository>();
