@@ -24,5 +24,14 @@ namespace GoodHamburgerApplication.API.Controllers
             var result = await useCase.Execute();
             return Ok(result);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(
+            [FromRoute] int id,
+            [FromServices] IDeleteOrderUseCase useCase)
+        {
+            var result = await useCase.Execute(id);
+            return Ok(result);
+        }
     }
 }
