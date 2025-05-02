@@ -47,5 +47,23 @@ namespace GoodHamburguerApplication.Infrastructure.Repositories
         {
             return await _context.Orders.SingleOrDefaultAsync(order => order.Id == id);
         }
+
+        public async Task<Order?> GetOrderByIdAsync(int id, bool asNoTracking = false)
+        {
+            var query = _context.Orders
+                .Include(o => o.Extras)
+                .Include(o => o.Sandwich)
+                .Where(o => o.Id == id);
+
+            if (asNoTracking)
+                return await query.AsNoTracking().FirstOrDefaultAsync();
+
+            return await query.FirstOrDefaultAsync();
+        }
+
+        public void Attach(Order order)
+        {
+            _context.Attach(order);
+        }
     }
 }
